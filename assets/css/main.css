@@ -1,10 +1,43 @@
-/*! HTML5 Boilerplate v4.3.0 | MIT License | http://h5bp.com/ */
+/* ==========================================================================
+   Font Faces
+   ========================================================================== */
 
-/*
- * What follows is the result of much research on cross-browser styling.
- * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
- * Kroc Camen, and the H5BP dev community and team.
- */
+@font-face {
+    font-family: 'A Gental Touch';
+    src: url('a_gentle_touch-webfont.eot');
+    src: url('a_gentle_touch-webfont.eot?#iefix') format('embedded-opentype'),
+         url('a_gentle_touch-webfont.woff') format('woff'),
+         url('a_gentle_touch-webfont.ttf') format('truetype'),
+         url('a_gentle_touch-webfont.svg#a_gentle_touch') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'Amatic SC';
+    src: url('amaticsc-regular-webfont.eot');
+    src: url('amaticsc-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('amaticsc-regular-webfont.woff') format('woff'),
+         url('amaticsc-regular-webfont.ttf') format('truetype'),
+         url('amaticsc-regular-webfont.svg#amatic_sc') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'Amatic SC';
+    src: url('amaticsc-bold-webfont.eot');
+    src: url('amaticsc-bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('amaticsc-bold-webfont.woff') format('woff'),
+         url('amaticsc-bold-webfont.ttf') format('truetype'),
+         url('amaticsc-bold-webfont.svg#amatic_sc') format('svg');
+    font-weight: bold;
+    font-style: normal;
+
+}
+
 
 /* ==========================================================================
    Base styles: opinionated defaults
