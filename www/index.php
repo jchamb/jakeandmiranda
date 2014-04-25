@@ -18,6 +18,24 @@
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
 
+        <article class="site__wrapper">
+            <section class="intro">
+            
+            </section>
+            <section class="about">
+                
+            </section>
+            <section class="location">
+                
+            </section>
+            <section class="gallery">
+                
+            </section>
+            <section class="register">
+                
+            </section>
+        </article>
+
         
 
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
