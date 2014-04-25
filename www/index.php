@@ -10,7 +10,7 @@
         <!-- Place favicon.ico and apple-touch-icon(s) in the root directory -->
 
         <link rel="stylesheet" href="/assets/css/normalize.css">
-        <link rel="stylesheet" href="/assets/css/main.css">
+        <link rel="stylesheet" href="/assets/css/screen.css">
         <script src="/assets/js/vendor/modernizr-2.7.1.min.js"></script>
     </head>
     <body>
