@@ -18,9 +18,19 @@
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
 
-        <article class="site__wrapper">
+        <!--<article class="site__wrapper">-->
             <section class="intro">
-            
+                <div class="intro__image intro__image--one"></div>
+                <div class="intro__image intro__image--two"></div>
+                <div class="intro__image intro__image--three"></div>
+                <div class="intro__image intro__image--four"></div>
+
+                <div class="intro__copy">
+                    <p>Celebrate with</p>
+                    <p>Miranda + Jake</p>
+                    <p>as they join in</p>
+                    <p>Life + Love</p>
+                </div>
             </section>
             <section class="about">
                 
@@ -34,7 +44,7 @@
             <section class="register">
                 
             </section>
-        </article>
+        <!--</article>-->
 
         
 
