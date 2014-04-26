@@ -48,11 +48,11 @@ Vagrant.configure("2") do |config|
   end
 
   config.vm.provision "shell" do |s|
-    s.path = "puphpet/shell/initial-setup.sh"
+    s.path = "config/puphpet/shell/initial-setup.sh"
     s.args = "/vagrant/puphpet"
   end
-  config.vm.provision :shell, :path => "puphpet/shell/update-puppet.sh"
-  config.vm.provision :shell, :path => "puphpet/shell/r10k.sh"
+  config.vm.provision :shell, :path => "config/puphpet/shell/update-puppet.sh"
+  config.vm.provision :shell, :path => "config/puphpet/shell/r10k.sh"
 
   config.vm.provision :puppet do |puppet|
     ssh_username = !data['ssh']['username'].nil? ? data['ssh']['username'] : "vagrant"
@@ -79,11 +79,11 @@ Vagrant.configure("2") do |config|
   ssh_username = !data['ssh']['username'].nil? ? data['ssh']['username'] : "vagrant"
 
   config.vm.provision "shell" do |kg|
-    kg.path = "puphpet/shell/ssh-keygen.sh"
+    kg.path = "config/puphpet/shell/ssh-keygen.sh"
     kg.args = "#{ssh_username}"
   end
 
-  config.vm.provision :shell, :path => "puphpet/shell/execute-files.sh"
+  config.vm.provision :shell, :path => "config/puphpet/shell/execute-files.sh"
 
   if !data['ssh']['host'].nil?
     config.ssh.host = "#{data['ssh']['host']}"

@@ -19,7 +19,7 @@ vagrantfile-local:
                     VBoxInternal2/SharedFoldersEnableSymlinksCreate/v-root: 1
         provision:
             puppet:
-                manifests_path: puphpet/puppet
+                manifests_path: config/puphpet/puppet
                 manifest_file: manifest.pp
                 options:
                     - '--verbose'
