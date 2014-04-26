@@ -2,7 +2,7 @@ require 'yaml'
 
 dir = File.dirname(File.expand_path(__FILE__))
 
-configValues = YAML.load_file("#{dir}/puphpet/config.yaml")
+configValues = YAML.load_file("#{dir}/config/puphpet/config.yaml")
 data = configValues['vagrantfile-local']
 
 if !data['vm']['provider']['virtualbox'].empty?
@@ -69,10 +69,10 @@ Vagrant.configure("2") do |config|
     end
   end
 
-  if File.file?("#{dir}/puphpet/files/dot/ssh/id_rsa")
+  if File.file?("#{dir}/config/puphpet/files/dot/ssh/id_rsa")
     config.ssh.private_key_path = [
-      "#{dir}/puphpet/files/dot/ssh/id_rsa",
-      "#{dir}/puphpet/files/dot/ssh/insecure_private_key"
+      "#{dir}/config/puphpet/files/dot/ssh/id_rsa",
+      "#{dir}/config/puphpet/files/dot/ssh/insecure_private_key"
     ]
   end
 

@@ -1,20 +1,20 @@
 ---
 vagrantfile-local:
     vm:
-        box: centos64-x64-vbox43-1383512148
-        box_url: 'http://box.puphpet.com/centos64-x64-vbox43.box'
+        box: debian-wheezy72-x64-vbox43
+        box_url: 'http://box.puphpet.com/debian-wheezy72-x64-vbox43.box'
         hostname: null
         network:
             private_network: 192.168.56.101
             forwarded_port:
-                cgVEkEKGeGEu:
+                sgnwGX7ewSaN:
                     host: '8080'
-                    guest: '2222'
+                    guest: '80'
         provider:
             virtualbox:
                 modifyvm:
                     natdnshostresolver1: on
-                    memory: '512'
+                    memory: '2048'
                 setextradata:
                     VBoxInternal2/SharedFoldersEnableSymlinksCreate/v-root: 1
         provision:
@@ -26,7 +26,7 @@ vagrantfile-local:
                     - '--hiera_config /vagrant/puphpet/puppet/hiera.yaml'
                     - '--parser future'
         synced_folder:
-            IyA9oPwQYw29:
+            799iR0lf13fB:
                 source: ./www
                 target: /var/www
                 nfs: 'true'
@@ -70,12 +70,13 @@ apache:
     modules:
         - php
         - rewrite
-        - ssl
     vhosts:
-        ctzoEQRy30F2:
-            servername: localhost.dev
+        8VvMKowr88ml:
+            servername: jakeandmiranda.dev
+            serveraliases:
+                - www.jakeandmiranda.dev
             docroot: /var/www
-            port: '8080'
+            port: '80'
             setenv:
                 - 'APP_ENV dev'
             override:
@@ -94,7 +95,7 @@ apache:
 nginx:
     install: 0
     vhosts:
-        JqdbAegRvnH0:
+        sQT7KmIKYKjV:
             server_name: awesome.dev
             server_aliases:
                 - www.awesome.dev
@@ -115,19 +116,17 @@ php:
             - cli
             - intl
             - mcrypt
+            - gd
             - imagick
-        pear:
-            - SOAP
+            - mysql
+            - curl
+            - xsl
+            - xmlrpc
+        pear: {  }
         pecl:
             - pecl_http
             - PDO
-            - mysql
             - PDO_MYSQL
-            - date_time
-            - mcrypt_filter
-            - zip
-            - archive
-            - imagick
     ini:
         display_errors: On
         error_reporting: '-1'
@@ -148,17 +147,17 @@ drush:
         drush.tag_branch: 6.x
 mysql:
     install: '1'
-    root_password: ''
-    phpmyadmin: '1'
+    root_password: root
+    phpmyadmin: '0'
     adminer: 0
     databases:
-        nRD9k50DVXaP:
+        mwlZ4wklQt6a:
             grant:
                 - ALL
             name: project
             host: localhost
-            user: project
-            password: ''
+            user: vagrant
+            password: root
             sql_file: ''
 postgresql:
     install: 0
