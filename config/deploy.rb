@@ -19,7 +19,7 @@ set :user, 'jakcha5'    # Username in the server to SSH to.
 
 # Manually create these paths in shared/ (eg: shared/config/database.yml) in your server.
 # They will be linked in the 'deploy:link_shared_paths' step.
-set :shared_paths, []
+set :shared_paths, ['www/.htaccess']
 
 # Optional settings:
 #   set :port, '30000'     # SSH port number.
