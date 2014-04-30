@@ -128,14 +128,33 @@
    Base
    ========================================================================== */
 
-html, body { width: 100%; height: 100%; }
-body       { padding: 40px; }
+html, body, 
+.site__wrapper { width: 100%; height: 100%; }
 
-body>section { width: 100%; height: 100%; position: relative; }
+html { padding: 40px; }
+
+.site__wrapper { position: relative; overflow: hidden; }
+
+.site__wrapper>section { 
+	width: 100%; 
+	height: 0; 
+	position: absolute;
+	top: 0;
+	left: 0;
+	transition: height 0.9s ease-in-out;
+	overflow: hidden;
+
+	&.visible { height: 100%; }
+	&:nth-child(1) { z-index:10 }
+	&:nth-child(2) { z-index:9;  }
+	&:nth-child(3) { z-index:8; background: #ccc }
+	&:nth-child(4) { z-index:7; background: #aaa; }
+
+}
 
 
 .intro {
-	
+	background: #fff;
 	}
 
 	.intro__copy {
@@ -150,8 +169,8 @@ body>section { width: 100%; height: 100%; position: relative; }
 		left: 49.9%;
 		width: 510px;
 		height: 685px;
-		margin-top: -(715/2)#{px};
-		margin-left: -(510/2)#{px};
+		margin-top: -(712/2)#{px};
+		margin-left: -(505/2)#{px};
 		padding-top: 220px;
 		
 		p { margin-bottom: 10px; }
@@ -171,8 +190,8 @@ body>section { width: 100%; height: 100%; position: relative; }
 	.intro__image {
 		background-size: cover;
 		position: absolute;
-		width: 49.8%;
-		height: 49.6%;
+		width: 49.9%;
+		height: 49.9%;
 	}
 
 	.intro__image--one {
@@ -184,22 +203,55 @@ body>section { width: 100%; height: 100%; position: relative; }
 	.intro__image--two {
 		background-image: url(../img/bg-intro-two.jpg);
 		top: 0;
-		left: 50%;
+		right: 0;
 	}
 
 	.intro__image--three {
 		background-image: url(../img/bg-intro-three.jpg);
-		top: 50%;
+		bottom: 0;
 		left: 0;
 	}
 
 	.intro__image--four {
 		background-image: url(../img/bg-intro-four.jpg);
-		top: 50%;
-		left: 50%;
+		bottom: 0;
+		right: 0;
+	}
+	
+
+	.location {
+		background: lighten(#82b191, 20%);
+	}
+	
+	.location .left {
+		float: left; 
+		width: 45%;
+		height: 100%;
+	}
+
+	
+	.location header {
+		border-bottom: 5px solid #fff;
+		padding: 80px;
+		text-align: center;
 	}
 
 
+
+	
+	.location .right {
+		float: right; 
+		width: 55%;
+		height: 100%;
+		background: #83B192;
+		border-left: 5px solid #fff;
+	}
+	.location .buttons { height: 100px; }
+	.location .map {
+		border-top: 5px solid #fff;
+		width: 100%;
+		height: calc(100% - 100px);
+	}
 
 
 
