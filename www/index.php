@@ -33,15 +33,30 @@
                 </div>
             </section>
             
-            <section class="section location visible">
+            <section class="section info-location visible">
                 <div class="left">
                     <header class="callout">
-                        <p>Miranda + Jake</p>
+                        <h1>Miranda + Jake</h1>
                         <p>are engaged to be married</p>
-                        <p><span class="line"></span>at<span class="line"></span></p>
+                        <img class="dots" src="/images/dots.png" />
+                        <h2>7.19.14</h2>
                         <p>Salem Stone Church, Carlisle, PA</p>
                     </header>
                     <section class="about">
+                        <img class="icon-bowtie" src="/images/icon-bowtie.jpg" />
+                        <p>He’ll fix his bow tie at 2:59.</p>
+                        <img class="icon-flowers" src="/images/icon-flowers.jpg" />
+                        <p>She’ll walk down the aisle at 3:00.</p>
+                        <p>Then to celebrate their promise of a lifetime together,<br>
+                        they’ll meet you at the Carlisle Ribbon Mill for an<br>
+                        evening of food, music, and dancing.</p>
+                        
+                        <img class="icon-glass" src="/images/icon-glass.jpg" />
+                        <p>Save room for dinner as you enjoy a drink and<br>
+                        hors d’oeuvres during cocktail hour beginning at 4:00.<p> 
+
+                        <p>This is a big kid party.<br> 
+                        Guests 13 and older are invited to attend.</p>
                     </section>
                 </div>
                 <div class="right">
@@ -52,13 +67,18 @@
                     </section>    
                 </div>
             </section>
+            <!--
             <section class="section register visible">
-                some text
+                <h2>RSVP</h2>
+                <form action="/guests.php" method="post">
+                    <input type="text" name="last_name" placeholder="Enter your last name and hit enter" />
+                </form>
             </section>
+            
             <section class="section gallery visible">
                 some text
             </section>
-            
+            -->
         </article>
 
         
@@ -70,12 +90,13 @@
         <script src="/assets/js/main.js"></script>
 
         <script>
-            (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
-            function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
-            e=o.createElement(i);r=o.getElementsByTagName(i)[0];
-            e.src='//www.google-analytics.com/analytics.js';
-            r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
-            ga('create','UA-XXXXX-X');ga('send','pageview');
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+            ga('create', 'UA-50592911-1', 'jakeandmiranda.com');
+            ga('send', 'pageview');
         </script>
     </body>
 </html>

@@ -147,8 +147,8 @@ html { padding: 40px; }
 	&.visible { height: 100%; }
 	&:nth-child(1) { z-index:10 }
 	&:nth-child(2) { z-index:9;  }
-	&:nth-child(3) { z-index:8; background: #ccc }
-	&:nth-child(4) { z-index:7; background: #aaa; }
+	&:nth-child(3) { z-index:8; }
+	&:nth-child(4) { z-index:7; }
 
 }
 
@@ -219,41 +219,60 @@ html { padding: 40px; }
 	}
 	
 
-	.location {
+	.info-location {
 		background: lighten(#82b191, 20%);
-	}
-	
-	.location .left {
-		float: left; 
-		width: 45%;
-		height: 100%;
-	}
-
-	
-	.location header {
-		border-bottom: 5px solid #fff;
-		padding: 80px;
+		color: #2B332D;
+		font-family: 'A Gental Touch';
 		text-align: center;
 	}
 
+	.info-location p { font-size: 24px; line-height: 1.4; margin-bottom: 20px; }
+	
+	.info-location .left {
+		float: left; 
+		width: 35%;
+		height: 100%;
+	}
+	
+	.callout {
+		border-bottom: 5px solid #fff;
+		text-align: center;
+		padding: 30px 30px 10px;
+	}
 
+	.callout h1,
+	.callout h2 {
+		font-family: "Amatic SC";
+		font-size: 72px;
+	}
+	.callout h2 { font-weight: bold; margin-bottom: 20px }
+	.callout p  { font-size: 24px; }
+	.dots       { margin: 10px 0 28px; }
+
+	.about { padding: 30px; }
+	
+	.icon-bowtie,
+	.icon-flowers,
+	.icon-glass { margin-bottom: 10px; }
 
 	
-	.location .right {
+	.info-location .right {
 		float: right; 
-		width: 55%;
+		width: 65%;
 		height: 100%;
 		background: #83B192;
 		border-left: 5px solid #fff;
 	}
-	.location .buttons { height: 100px; }
-	.location .map {
+	.info-location .buttons { height: 100px; }
+	.info-location .map {
 		border-top: 5px solid #fff;
 		width: 100%;
 		height: calc(100% - 100px);
 	}
 
-
+	.register {
+		background: #E6F4EA;
+	}
 
 
 
