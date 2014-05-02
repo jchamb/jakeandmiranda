@@ -43,15 +43,15 @@
                         <p>Salem Stone Church, Carlisle, PA</p>
                     </header>
                     <section class="about">
-                        <img class="icon-bowtie" src="/images/icon-bowtie.jpg" />
+                        <img class="icon-bowtie" src="/images/icon-bowtie.png" />
                         <p>He’ll fix his bow tie at 2:59.</p>
-                        <img class="icon-flowers" src="/images/icon-flowers.jpg" />
+                        <img class="icon-flowers" src="/images/icon-flowers.png" />
                         <p>She’ll walk down the aisle at 3:00.</p>
                         <p>Then to celebrate their promise of a lifetime together,<br>
                         they’ll meet you at the Carlisle Ribbon Mill for an<br>
                         evening of food, music, and dancing.</p>
                         
-                        <img class="icon-glass" src="/images/icon-glass.jpg" />
+                        <img class="icon-glass" src="/images/icon-glass.png" />
                         <p>Save room for dinner as you enjoy a drink and<br>
                         hors d’oeuvres during cocktail hour beginning at 4:00.<p> 
 
@@ -67,14 +67,24 @@
                     </section>    
                 </div>
             </section>
-            <!--
-            <section class="section register visible">
-                <h2>RSVP</h2>
-                <form action="/guests.php" method="post">
-                    <input type="text" name="last_name" placeholder="Enter your last name and hit enter" />
-                </form>
-            </section>
             
+            <section class="section register visible">
+                
+                <p>
+                <img src="/images/icon-lighthouse.png" alt="" /><br>
+                Miranda and Jake's first adventure as husband and wife will be to Maine's Acadia National Park.
+                <br>Please consider contributing to their honeymoon fund. The couple is also registered at <a href="http://www.bedbathandbeyond.com/store/giftregistry/view_registry_guest.jsp?pwsToken=&eventType=Wedding&registryId=540958213&pwsurl=" target="_blank">Bed, Bath, and Beyond</a></p>
+                
+                <div class="rsvp">
+                    <h2><img class="arrow-left" src="/images/arrow-left.png" alt=""> RSVP <img class="arrow-right" src="/images/arrow-right.png" alt=""></h2>
+                    <form action="/guests.php" method="post">
+                        <input type="text" name="last_name" class="last_name" placeholder="Last name please!" />
+                        <input type="submit" name="submit" class="submit" id="name-submit" value="Find me" />
+                        <input type="hidden" name="action" value="find">
+                    </form>
+                </div>
+            </section>
+            <!--
             <section class="section gallery visible">
                 some text
             </section>
