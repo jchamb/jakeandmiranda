@@ -8,7 +8,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <!-- Place favicon.ico and apple-touch-icon(s) in the root directory -->
-
+        <link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" href="/assets/css/normalize.css">
         <link rel="stylesheet" href="/assets/css/screen.css">
         <script src="/assets/js/vendor/modernizr-2.7.1.min.js"></script>
@@ -17,8 +17,14 @@
         <!--[if lt IE 8]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
+        <div class="status">
+            <span class="visible"></span>
+            <span></span>
+            <span></span>
+        </div>
 
         <article class="site__wrapper">
+            
             <section class="section intro visible">
                 <div class="intro__image intro__image--one"></div>
                 <div class="intro__image intro__image--two"></div>
@@ -77,12 +83,13 @@
                 
                 <div class="rsvp">
                     <h2><img class="arrow-left" src="/images/arrow-left.png" alt=""> RSVP <img class="arrow-right" src="/images/arrow-right.png" alt=""></h2>
-                    <form action="/guests.php" method="post">
-                        <input type="text" name="last_name" class="last_name" placeholder="Last name please!" />
+                    <form class="search" action="/guests.php" method="post">
+                        <input type="text" name="last_name" class="last_name" id="last_name" placeholder="Last name please!" autocomplete="off" />
                         <input type="submit" name="submit" class="submit" id="name-submit" value="Find me" />
                         <input type="hidden" name="action" value="find">
                     </form>
                 </div>
+                <p class="rsvp-note">If you have any problems while trying to RSVP call Jake at 610.763.9766</p>
             </section>
             <!--
             <section class="section gallery visible">

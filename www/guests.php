@@ -37,7 +37,7 @@ function findGuests()
 				AND attending < 1
 				ORDER BY `group` ASC, first_name ASC, last_name ASC";
 
-		$data    = array(filter_var($_POST['last_name'], FILTER_SANITIZE_STRING));
+		$data    = array(filter_var( ucwords($_POST['last_name']), FILTER_SANITIZE_STRING));
 		$results = get($sql, $data);
 
 
@@ -45,20 +45,27 @@ function findGuests()
 
 			$last_group = $results[0]->group;
 			
-			echo '<form action="/guests.php" method="post">'."\n"
-			     . "<ul class=\"guests\">\n<li>\n<ul>\n";
+			echo '<form class="invited" id="invited" action="/guests.php" method="post">'."\n"
+			     . "<ul class=\"guests\">";//\n<li>\n<ul>\n";
 
 			foreach ($results as $guest) {
 
+				/*
 				if($guest->group != $last_group)
 				{
 					echo "</ul>\n</li>\n<li>\n<ul>";
 				}
+				*/
 
 				echo "
 				<li>
-					<input type=\"checkbox\" id=\"guest-{$guest->id}\" name=\"guest[{$guest->id}]\" value=\"1\">
-					<label for=\"guest-{$guest->id}\">$guest->first_name $guest->last_name</label>
+					<span class=\"respond\">
+						<input type=\"radio\" id=\"guest-{$guest->id}-yes\" name=\"guest[{$guest->id}]\" value=\"1\"> <label for=\"guest-{$guest->id}-yes\">Yes</label><br>
+						<input type=\"radio\" id=\"guest-{$guest->id}-no\" name=\"guest[{$guest->id}]\" value=\"2\"> <label for=\"guest-{$guest->id}-no\">No</label>
+					</span>
+					<span class=\"name\">
+						$guest->first_name $guest->last_name
+					</span>
 				</li>
 				";
 				
@@ -66,8 +73,13 @@ function findGuests()
 
 					echo "
 					<li>
-						<input type=\"checkbox\" id=\"guest-{$guest->id}\" name=\"guest[{$guest->id}_guest]\" value=\"1\">
-						<label for=\"guest-{$guest->id}\">$guest->first_name $guest->last_name Guest</label>
+						<span class=\"respond\">
+							<input type=\"radio\" id=\"guest-{$guest->id}-guest-yes\" name=\"guest[{$guest->id}_guest]\" value=\"1\"> <label for=\"guest-{$guest->id}-guest-yes\">Yes</label><br>
+							<input type=\"radio\" id=\"guest-{$guest->id}-guest-no\" name=\"guest[{$guest->id}_guest]\" value=\"2\"> <label for=\"guest-{$guest->id}-guest-no\">No</label>
+						</span>
+						<span class=\"name\">
+							$guest->first_name $guest->last_name's Guest
+						</span>
 					</li>
 					";
 				}
@@ -75,8 +87,8 @@ function findGuests()
 				$last_group = $guest->group;
 			}
 
-			echo "</ul>\n</li>\n</ul>\n"
-				 . '<input type="submit" name="submit" class="submit" id="name-submit" value="I\'m / We\'re Coming" />'
+			echo "</ul>\n"//</li>\n</ul>\n"
+				 . '<input type="submit" name="submit" class="submit" id="name-submit" value="RSVP" />'
 	             . '<input type="hidden" name="action" value="register">'."\n"
 	             . '</form>'."\n";
 		
@@ -99,7 +111,25 @@ function findGuests()
 
 function registerGuests()
 {
+	$db = DB();
 
+	foreach ($_POST['guest'] as $id => $value) 
+	{
+		
+		if(preg_match('/_guest/', $id))
+		{
+			$parts = explode('_', $id);
+			
+			$STH = $db->prepare("UPDATE `guests` SET guest_attending = ? WHERE id = ?");
+			$STH->execute(array($value, $id[0]));
+		}
+		else
+		{
+			$STH = $db->prepare("UPDATE `guests` SET attending = ? WHERE id = ?");
+			$STH->execute(array($value, $id));
+		}
+	}
+	echo "<p class=\"thanks\">Thanks, We got it!</p>";
 }
 
 
