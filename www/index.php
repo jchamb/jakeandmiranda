@@ -67,7 +67,12 @@
                 </div>
                 <div class="right">
                     <section class="buttons">
-                        
+                        <a target="_blank" href="https://www.google.com/maps/dir//Carlisle+Ribbon+Mill,+320+E+Louther+St,+Carlisle,+PA+17013/@40.202368,-77.181559,17z/data=!4m12!1m3!3m2!1s0x0:0xad40986df479d9a7!2sCarlisle+Ribbon+Mill!4m7!1m0!1m5!1m1!1s0x89c8e1cd14af9ae7:0xad40986df479d9a7!2m2!1d-77.181559!2d40.202368">
+                            Directions to Salem Stone Church
+                        </a>
+                        <a target="_blank" href="https://www.google.com/maps/dir//Carlisle+Ribbon+Mill,+320+E+Louther+St,+Carlisle,+PA+17013/@40.202368,-77.181559,17z/data=!4m12!1m3!3m2!1s0x0:0xad40986df479d9a7!2sCarlisle+Ribbon+Mill!4m7!1m0!1m5!1m1!1s0x89c8e1cd14af9ae7:0xad40986df479d9a7!2m2!1d-77.181559!2d40.202368">
+                            Directions to The Carlisle Ribbon Mill
+                        </a>
                     </section>
                     <section class="map" id="map">
                     </section>    
