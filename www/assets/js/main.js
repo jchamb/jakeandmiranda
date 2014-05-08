@@ -90,6 +90,12 @@ var JM = (function(JM, $) {
 				$(slide).toggleClass('visible', (i >= JM.Scroll.currentSlideIndex));
 			});
 
+			if(JM.Scroll.currentSlideIndex < 2) {
+				$('.site__wrapper').css('overflow', 'hidden');
+			} else {
+				$('.site__wrapper').css('overflow', 'auto');
+			}
+
 			$('.status').children('.visible').removeClass('visible');
 			$('.status').children('span').eq(this.currentSlideIndex).addClass('visible');
 
