@@ -26,6 +26,8 @@ var JM = (function(JM, $) {
         	$(window).on({
 				'DOMMouseScroll mousewheel': this.elementScroll
 			});
+
+			$('#status').on('click', 'span', this.updateIndex)
         },
 
         unbind: function() {
@@ -118,6 +120,15 @@ var JM = (function(JM, $) {
 			}
 		 
 			this.showSlide();
+		},
+
+		updateIndex: function(event)
+		{
+			event.preventDefault();
+
+			JM.Scroll.currentSlideIndex = $(this).index();
+			console.log(JM.Scroll.currentSlideIndex );
+			JM.Scroll.showSlide();
 		}
 	};
 
