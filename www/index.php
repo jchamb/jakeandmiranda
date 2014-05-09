@@ -40,64 +40,65 @@
                     </div>
                 </section>
             </div>
-            
-            <section class="info-location visible">
-                <div class="left">
-                    <header class="callout">
-                        <h1>Miranda + Jake</h1>
-                        <p>are engaged to be married</p>
-                        <img class="dots" src="/images/dots.png" />
-                        <h2>7.19.14</h2>
-                        <p>Salem Stone Church, Carlisle, PA</p>
-                    </header>
-                    <section class="about">
-                        <img class="icon-bowtie" src="/images/icon-bowtie.png" />
-                        <p>He’ll fix his bow tie at 2:59.</p>
-                        <img class="icon-flowers" src="/images/icon-flowers.png" />
-                        <p>She’ll walk down the aisle at 3:00.</p>
-                        <p>Then to celebrate their promise of a lifetime together,<br>
-                        they’ll meet you at the Carlisle Ribbon Mill for an<br>
-                        evening of food, music, and dancing.</p>
-                        
-                        <img class="icon-glass" src="/images/icon-glass.png" />
-                        <p>Save room for dinner as you enjoy a drink and<br>
-                        hors d’oeuvres during cocktail hour beginning at 4:00.<p> 
+            <div class="main">
+                <section class="info-location">
+                    <div class="left">
+                        <header class="callout">
+                            <h1>Miranda + Jake</h1>
+                            <p>are engaged to be married</p>
+                            <img class="dots" src="/images/dots.png" />
+                            <h2>7.19.14</h2>
+                            <p>Salem Stone Church, Carlisle, PA</p>
+                        </header>
+                        <section class="about">
+                            <img class="icon-bowtie" src="/images/icon-bowtie.png" />
+                            <p>He’ll fix his bow tie at 2:59.</p>
+                            <img class="icon-flowers" src="/images/icon-flowers.png" />
+                            <p>She’ll walk down the aisle at 3:00.</p>
+                            <p>Then to celebrate their promise of a lifetime together,<br>
+                            they’ll meet you at the Carlisle Ribbon Mill for an<br>
+                            evening of food, music, and dancing.</p>
+                            
+                            <img class="icon-glass" src="/images/icon-glass.png" />
+                            <p>Save room for dinner as you enjoy a drink and<br>
+                            hors d’oeuvres during cocktail hour beginning at 4:00.</p> 
 
-                        <p>This is a big kid party.<br> 
-                        Guests 13 and older are invited to attend.</p>
-                    </section>
-                </div>
-                <div class="right">
-                    <section class="buttons">
-                        <a target="_blank" href="http://goo.gl/sKbich">
-                            Directions to Salem Stone Church
-                        </a>
-                        <a target="_blank" href="http://goo.gl/GVQunI">
-                            Directions to The Carlisle Ribbon Mill
-                        </a>
-                    </section>
-                    <section class="map" id="map">
-                    </section>    
-                </div>
-            </section>
-            
-            <section class=" register visible">
+                            <p>This is a big kid party.<br> 
+                            Guests 13 and older are invited to attend.</p>
+                        </section>
+                    </div>
+                    <div class="right">
+                        <section class="buttons">
+                            <a target="_blank" href="http://goo.gl/sKbich">
+                                Directions to Salem Stone Church
+                            </a>
+                            <a target="_blank" href="http://goo.gl/GVQunI">
+                                Directions to The Carlisle Ribbon Mill
+                            </a>
+                        </section>
+                        <section class="map" id="map">
+                        </section>    
+                    </div>
+                </section>
                 
-                <p>
-                <img src="/images/icon-lighthouse.png" alt="" /><br>
-                Miranda and Jake's first adventure as husband and wife will be to Maine's Acadia National Park.
-                <br>Please consider contributing to their honeymoon fund. The couple is also registered at <a href="http://www.bedbathandbeyond.com/store/giftregistry/view_registry_guest.jsp?pwsToken=&eventType=Wedding&registryId=540958213&pwsurl=" target="_blank">Bed, Bath, and Beyond</a></p>
-                
-                <div class="rsvp">
-                    <h2><img class="arrow-left" src="/images/arrow-left.png" alt=""> RSVP <img class="arrow-right" src="/images/arrow-right.png" alt=""></h2>
-                    <form class="search" action="/guests.php" method="post">
-                        <input type="text" name="last_name" class="last_name" id="last_name" placeholder="Last name please!" autocomplete="off" />
-                        <input type="submit" name="submit" class="submit" id="name-submit" value="Find me" />
-                        <input type="hidden" name="action" value="find">
-                    </form>
-                </div>
-                <p class="rsvp-note">If you have any problems while trying to RSVP call Jake at 610.763.9766</p>
-            </section>
+                <section class="register">
+                    
+                    <p>
+                    <img src="/images/icon-lighthouse.png" alt="" /><br>
+                    Miranda and Jake's first adventure as husband and wife will be to Maine's Acadia National Park.
+                    <br>Please consider contributing to their honeymoon fund. The couple is also registered at <a href="http://www.bedbathandbeyond.com/store/giftregistry/view_registry_guest.jsp?pwsToken=&eventType=Wedding&registryId=540958213&pwsurl=" target="_blank">Bed, Bath, and Beyond</a></p>
+                    
+                    <div class="rsvp">
+                        <h2><img class="arrow-left" src="/images/arrow-left.png" alt=""> RSVP <img class="arrow-right" src="/images/arrow-right.png" alt=""></h2>
+                        <form class="search" action="/guests.php" method="post">
+                            <input type="text" name="last_name" class="last_name" id="last_name" placeholder="Last name please!" autocomplete="off" />
+                            <input type="submit" name="submit" class="submit" id="name-submit" value="Find me" />
+                            <input type="hidden" name="action" value="find">
+                        </form>
+                    </div>
+                    <p class="rsvp-note">If you have any problems while trying to RSVP call Jake at 610.763.9766</p>
+                </section>
+            </div>
             
         </article>
 

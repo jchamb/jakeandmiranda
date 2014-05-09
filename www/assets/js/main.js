@@ -17,7 +17,7 @@ var JM = (function(JM, $) {
 
 
         init: function() {
-        	this.slides = $('#feature').find('.section');
+        	this.slides = $('#feature').children('section');
         	this.numSlides = this.slides.length;
         	this.bind();
         },
@@ -37,7 +37,8 @@ var JM = (function(JM, $) {
         },
 
         elementScroll: function (e) {
- 			
+ 			console.log(JM.Scroll.currentSlideIndex);
+			/*
 			var scroll = true;
 			
 			if(JM.Scroll.currentSlideIndex == 1)
@@ -55,6 +56,7 @@ var JM = (function(JM, $) {
 
 			if(scroll)
 			{
+			*/
 				// --- Scrolling up ---
 				if (e.originalEvent.detail < 0 || e.originalEvent.wheelDelta > 0) {	
 			 
@@ -77,12 +79,14 @@ var JM = (function(JM, $) {
 
 				// Prevent page from scrolling
 				return false;
-			}
+			//}
 		},
 		 
 		 
 		showSlide: function() {
 		 	
+			//console.log(JM.Scroll.currentSlideIndex);
+
 			// reset
 			JM.Scroll.delta = 0;
 
@@ -90,13 +94,10 @@ var JM = (function(JM, $) {
 				$(slide).toggleClass('visible', (i >= JM.Scroll.currentSlideIndex));
 			});
 
-			//if(JM.Scroll.currentSlideIndex
-
-			/*if(JM.Scroll.currentSlideIndex < 2) {
-				$('body').css('overflow', 'hidden');
-			} else {
-				$('body').css('overflow', 'auto');
-			}*/
+			if(this.currentSlideIndex >= this.numSlides) {
+				this.unbind();
+				$('.site__wrapper').css('overflow', 'auto');
+			} 
 
 			$('.status').children('.visible').removeClass('visible');
 			$('.status').children('span').eq(this.currentSlideIndex).addClass('visible');
@@ -135,7 +136,7 @@ var JM = (function(JM, $) {
 			event.preventDefault();
 
 			JM.Scroll.currentSlideIndex = $(this).index();
-			console.log(JM.Scroll.currentSlideIndex );
+			//console.log(JM.Scroll.currentSlideIndex );
 			JM.Scroll.showSlide();
 		}
 	};
@@ -260,12 +261,6 @@ var JM = (function(JM, $) {
 					data: $form.serialize(),
 				})
 				.done(JM.RSVP.listLoaded)
-				.fail(function() {
-					console.log("error");
-				})
-				.always(function() {
-					console.log("complete");
-				});
 
 				JM.RSVP.searchSubmited = true;
 			}
@@ -294,12 +289,6 @@ var JM = (function(JM, $) {
 					data: $form.serialize(),
 				})
 				.done(JM.RSVP.registerCompleted)
-				.fail(function() {
-					console.log("error");
-				})
-				.always(function() {
-					console.log("complete");
-				});
 
 				JM.RSVP.registerSubmited = true;
 			}
