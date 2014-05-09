@@ -136,7 +136,7 @@ body,
 
 body { border: 40px solid #fff; }
 
-.site__wrapper { position: relative; top: 0; overflow: hidden; }
+.site__wrapper { position: relative; overflow: hidden; }
 
 .feature {
 	position: absolute;
@@ -144,13 +144,9 @@ body { border: 40px solid #fff; }
 	left: 0;
 }
 
-.feature {
-	z-index:10;
-}
+.feature { z-index:10; }
 
-.main {
-	z-index:9;
-}
+.main { z-index:9; }
 
 
 .feature>section { 
@@ -349,14 +345,10 @@ body { border: 40px solid #fff; }
 
 
 	.register {
-		position: relative;
-		left: auto;
-		top: auto;
-		margin-top: 100%;
+		margin-top: 5px;
 		background: #E6F4EA;
 		padding-top: 75px;
-		min-height: 5px;
-		height: auto !important;
+		min-height: 100%;
 
 		p {
 			font-family: "A Gental Touch";
