@@ -28,6 +28,9 @@ var JM = (function(JM, $) {
 			});
 
 			$('#status').on('click', 'span', this.updateIndex)
+			$('.site__wrapper').on({
+				'DOMMouseScroll mousewheel': this.rebindScroll
+			});
         },
 
         unbind: function() {
@@ -36,57 +39,48 @@ var JM = (function(JM, $) {
 			});
         },
 
-        elementScroll: function (e) {
- 			console.log(JM.Scroll.currentSlideIndex);
-			/*
-			var scroll = true;
-			
-			if(JM.Scroll.currentSlideIndex == 1)
-			{
-				scroll = false;
+        rebindScroll: function(e) {
 
-				var elem = $('.info-location').find('.left');
-				
-				console.log(elem.prop("scrollHeight") - elem.scrollTop()+' : '+elem.outerHeight())
-			    if (elem.prop("scrollHeight") - elem.scrollTop() == elem.outerHeight()) 
-			    {
-			        scroll = true;
-			    }
+        	console.log('scrolling site wrap');
+
+        	if(JM.Scroll.currentSlideIndex < JM.Scroll.numSlides)
+        		return false;
+
+        	if($(this).scrollTop() == 0) {
+        		JM.Scroll.rebindScroll();
+        		JM.Scroll.currentSlideIndex = JM.Scroll.numSlides;
+        	}
+        }
+
+        elementScroll: function (e) {
+ 			
+			// --- Scrolling up ---
+			if (e.originalEvent.detail < 0 || e.originalEvent.wheelDelta > 0) {	
+		 
+				JM.Scroll.delta--;
+		 
+				if ( Math.abs(JM.Scroll.delta) >= JM.Scroll.scrollThreshold) {
+					JM.Scroll.prevSlide();
+				}
+			}
+		 
+			// --- Scrolling down ---
+			else {
+		 
+				JM.Scroll.delta++;
+		 
+				if (JM.Scroll.delta >= JM.Scroll.scrollThreshold) {
+					JM.Scroll.nextSlide();
+				}
 			}
 
-			if(scroll)
-			{
-			*/
-				// --- Scrolling up ---
-				if (e.originalEvent.detail < 0 || e.originalEvent.wheelDelta > 0) {	
-			 
-					JM.Scroll.delta--;
-			 
-					if ( Math.abs(JM.Scroll.delta) >= JM.Scroll.scrollThreshold) {
-						JM.Scroll.prevSlide();
-					}
-				}
-			 
-				// --- Scrolling down ---
-				else {
-			 
-					JM.Scroll.delta++;
-			 
-					if (JM.Scroll.delta >= JM.Scroll.scrollThreshold) {
-						JM.Scroll.nextSlide();
-					}
-				}
-
-				// Prevent page from scrolling
-				return false;
-			//}
+			// Prevent page from scrolling
+			return false;
 		},
 		 
 		 
 		showSlide: function() {
 		 	
-			//console.log(JM.Scroll.currentSlideIndex);
-
 			// reset
 			JM.Scroll.delta = 0;
 
@@ -97,6 +91,7 @@ var JM = (function(JM, $) {
 			if(this.currentSlideIndex >= this.numSlides) {
 				this.unbind();
 				$('.site__wrapper').css('overflow', 'auto');
+				$('.main').css('overflow', 'visible');
 			} 
 
 			$('.status').children('.visible').removeClass('visible');
