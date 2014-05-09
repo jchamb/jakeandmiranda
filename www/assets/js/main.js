@@ -17,7 +17,7 @@ var JM = (function(JM, $) {
 
 
         init: function() {
-        	this.slides = $('.section');
+        	this.slides = $('#feature').find('.section');
         	this.numSlides = this.slides.length;
         	this.bind();
         },
@@ -90,16 +90,18 @@ var JM = (function(JM, $) {
 				$(slide).toggleClass('visible', (i >= JM.Scroll.currentSlideIndex));
 			});
 
-			if(JM.Scroll.currentSlideIndex < 2) {
-				$('.site__wrapper').css('overflow', 'hidden');
+			//if(JM.Scroll.currentSlideIndex
+
+			/*if(JM.Scroll.currentSlideIndex < 2) {
+				$('body').css('overflow', 'hidden');
 			} else {
-				$('.site__wrapper').css('overflow', 'auto');
-			}
+				$('body').css('overflow', 'auto');
+			}*/
 
 			$('.status').children('.visible').removeClass('visible');
 			$('.status').children('span').eq(this.currentSlideIndex).addClass('visible');
 
-			//console.log(this);
+			// console.log(this);
 			setTimeout(function(){
 				JM.Scroll.bind();
 			}, 900);			
@@ -122,7 +124,7 @@ var JM = (function(JM, $) {
 			this.currentSlideIndex++;
 		 
 			if (this.currentSlideIndex == this.numSlides) { 
-				this.currentSlideIndex = this.numSlides-1;
+				this.currentSlideIndex = this.numSlides;
 			}
 		 
 			this.showSlide();

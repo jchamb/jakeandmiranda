@@ -128,12 +128,16 @@
    Base
    ========================================================================== */
 
-html, body, 
-.site__wrapper { width: 100%; height: 100%; overflow: hidden; }
+html, 
+body, 
+.feature,
+.site__wrapper { width: 100%; height: 100%; }
 
 // html { padding: 40px; }
 
-.site__wrapper { position: relative; border: 40px solid #fff; }
+body { border: 40px solid #fff; overflow: hidden; }
+
+.site__wrapper { position: relative; top: 0; }
 
 .site__wrapper>section { 
 	width: 100%; 
@@ -144,12 +148,11 @@ html, body,
 	transition: height 0.9s ease-in-out;
 	overflow: hidden;
 
-	&.visible { height: 100%; }
+	&.visible      { height: 100%; }
 	&:nth-child(1) { z-index:10 }
-	&:nth-child(2) { z-index:9;  }
+	&:nth-child(2) { z-index:9; }
 	&:nth-child(3) { z-index:8; }
 	&:nth-child(4) { z-index:7; }
-
 }
 
 .status {
@@ -329,6 +332,10 @@ html, body,
 
 
 	.register {
+		position: relative;
+		left: auto;
+		top: auto;
+		margin-top: 100%;
 		background: #E6F4EA;
 		padding-top: 75px;
 		min-height: 100%;

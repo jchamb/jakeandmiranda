@@ -25,21 +25,23 @@
 
         <article class="site__wrapper">
             
-            <section class="section intro visible">
-                <div class="intro__image intro__image--one"></div>
-                <div class="intro__image intro__image--two"></div>
-                <div class="intro__image intro__image--three"></div>
-                <div class="intro__image intro__image--four"></div>
+            <div class="feature" id="feature">
+                <section class="section intro visible">
+                    <div class="intro__image intro__image--one"></div>
+                    <div class="intro__image intro__image--two"></div>
+                    <div class="intro__image intro__image--three"></div>
+                    <div class="intro__image intro__image--four"></div>
 
-                <div class="intro__copy">
-                    <p>Celebrate with</p>
-                    <p>Miranda + Jake</p>
-                    <p>as they join in</p>
-                    <p>Life + Love</p>
-                </div>
-            </section>
+                    <div class="intro__copy">
+                        <p>Celebrate with</p>
+                        <p>Miranda + Jake</p>
+                        <p>as they join in</p>
+                        <p>Life + Love</p>
+                    </div>
+                </section>
+            </div>
             
-            <section class="section info-location visible">
+            <section class="info-location visible">
                 <div class="left">
                     <header class="callout">
                         <h1>Miranda + Jake</h1>
@@ -79,7 +81,7 @@
                 </div>
             </section>
             
-            <section class="section register visible">
+            <section class=" register visible">
                 
                 <p>
                 <img src="/images/icon-lighthouse.png" alt="" /><br>
@@ -96,11 +98,7 @@
                 </div>
                 <p class="rsvp-note">If you have any problems while trying to RSVP call Jake at 610.763.9766</p>
             </section>
-            <!--
-            <section class="section gallery visible">
-                some text
-            </section>
-            -->
+            
         </article>
 
         
