@@ -136,26 +136,15 @@ body,
 
 body { border: 40px solid #fff; }
 
-.site__wrapper { position: relative; overflow: hidden; }
-
-.feature {
-	position: absolute;
-	top: 0;
-	left: 0;
+.site__wrapper { 
+	position: relative; 
+	overflow: auto; 
 }
 
-.feature { z-index:10; }
 
-.main { z-index:9; }
-
-
-.feature>section { 
+.feature section { 
 	width: 100%; 
-	height: 0; 
-	position: absolute;
-	top: 0;
-	left: 0;
-	transition: height 0.9s ease-in-out;
+	height: 100%; 
 	overflow: hidden;
 
 	&.visible      { height: 100%; }
@@ -198,8 +187,14 @@ body { border: 40px solid #fff; }
 }
 
 
+
 .intro {
 	background: #fff;
+	width: 100%; 
+	height: 100%; 
+	overflow: hidden;
+
+	&.visible      { height: 100%; }
 	}
 
 	.intro__copy {
@@ -266,10 +261,10 @@ body { border: 40px solid #fff; }
 
 	.info-location {
 		background: #E6F4EA;//lighten(#82b191, 20%);
-		//color: #2B332D;
 		font-family: 'A Gental Touch';
 		text-align: center;
 		overflow: hidden;
+		margin-top: 5px;
 	 	
 	 	p { font-size: 24px; line-height: 1.4; margin-bottom: 20px; }
 	
@@ -296,7 +291,7 @@ body { border: 40px solid #fff; }
 				background:#E6F4EA;
 				border-radius: 4px;
 				height: 60px;
-				width: 45%;
+				width: 47%;
 				display: inline-block;
 				color: #444;
 				font-size: 24px;
