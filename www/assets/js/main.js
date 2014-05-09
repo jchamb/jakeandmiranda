@@ -50,7 +50,7 @@ var JM = (function(JM, $) {
         		JM.Scroll.rebindScroll();
         		JM.Scroll.currentSlideIndex = JM.Scroll.numSlides;
         	}
-        }
+        },
 
         elementScroll: function (e) {
  			
